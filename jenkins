@@ -1,26 +1,26 @@
 pipeline {
-agent any 
+   agent any 
 stages {
-stage ('Compile Stage ') 
+    stage ('Compile Stage '){ 
 steps {
-with maven ( maven : 'maven'){
-bat 'mvn clean compile'
+     with maven ( maven : 'maven'){
+     bat 'mvn clean compile'
+     }
+   }
 }
-}
-}
-stage ('Testing Stage ') 
+    stage ('Testing Stage '){ 
 steps {
-with maven ( maven : 'maven'){
-bat 'mvn test'
+      with maven ( maven : 'maven'){
+      bat 'mvn test'
+      }
+    }
 }
-}
-}
-stage ('Install Stage ') 
+      stage ('Install Stage '){ 
 steps {
-with maven ( maven : 'maven'){
-bat 'mvn install'
-}
-}
-}
-}
-}
+      with maven ( maven : 'maven'){
+      bat 'mvn install'
+      }
+     }
+    }
+   }
+ }
